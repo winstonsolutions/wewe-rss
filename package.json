@@ -14,7 +14,7 @@
     "build": "pnpm build:web && pnpm build:server && pnpm copy:web-to-server",
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build",
-    "copy:web-to-server": "cp -r apps/web/dist/* apps/server/client/",
+    "copy:web-to-server": "mkdir -p apps/server/client/ && cp -r apps/web/dist/* apps/server/client/",
     "start": "pnpm --filter server start:prod",
     "start:server": "pnpm --filter server start:prod",
     "start:web": "pnpm --filter web start",
