@@ -11,10 +11,10 @@
     "vscode": ">=1.79"
   },
   "scripts": {
-    "build": "pnpm build:web && pnpm build:server && pnpm copy:web-to-server",
+    "prebuild": "mkdir -p apps/server/client",
+    "build": "pnpm build:web && pnpm build:server",
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build",
-    "copy:web-to-server": "mkdir -p apps/server/client/ && cp -r apps/web/dist/* apps/server/client/",
     "start": "pnpm --filter server start:prod",
     "start:server": "pnpm --filter server start:prod",
     "start:web": "pnpm --filter web start",

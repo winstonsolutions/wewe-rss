@@ -36,7 +36,7 @@ export default defineConfig({
     alias: [
       {
         find: '@server',
-        replacement: resolve(projectRootDir, '../apps/server/src'),
+        replacement: resolve(projectRootDir, '../server/src'),
       },
       {
         find: '@web',
