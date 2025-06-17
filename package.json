@@ -11,13 +11,14 @@
     "vscode": ">=1.79"
   },
   "scripts": {
-    "build": "pnpm --filter server build",
-    "start": "pnpm --filter server start:prod",
-    "dev": "pnpm run --parallel dev",
+    "build": "pnpm build:web && pnpm build:server && pnpm copy:web-to-server",
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build",
+    "copy:web-to-server": "cp -r apps/web/dist/* apps/server/client/",
+    "start": "pnpm --filter server start:prod",
     "start:server": "pnpm --filter server start:prod",
     "start:web": "pnpm --filter web start",
+    "dev": "pnpm run --parallel dev",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check ."
   },
